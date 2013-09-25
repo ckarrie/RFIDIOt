@@ -969,7 +969,7 @@ class rfidiot:
 					wait=False
 				except:
 					sys.stdin.flush()
-					time.sleep(0.5)
+					time.sleep(0.2)
 		else:
 			while not self.select():
 				# do nothing
@@ -1020,7 +1020,7 @@ class rfidiot:
 				# start a new connection in case TAG has been switched
 				self.pcsc_connection.disconnect()
 				self.pcsc_connection.connect()
-				time.sleep(0.6)	
+				time.sleep(0.2)	
 				self.pcsc_atr= self.ListToHex(self.pcsc_connection.getATR())
 				atslen= 2 * int(self.pcsc_atr[3],16)
 				self.pcsc_ats= self.pcsc_atr[8:8 + atslen]
